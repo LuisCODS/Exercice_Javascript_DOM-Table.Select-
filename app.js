@@ -78,7 +78,7 @@ function buildTable(input)
 
 
 // =========================  EXERCICE 3 ========================= -->
-
+//Objet JASON
 var automobiles = {
     "Acura": ["MDX", "RDX", "TL", "RL"],
     "Audi": ["A4", "A6", "A8", "S4", "S6"],
@@ -97,7 +97,6 @@ var modeles = document.getElementById("modele");
 for (var propre in automobiles){
     var option = document.createElement("option");
     option.textContent = propre;
-	//option.setAttribute("propre", propre)
     marques.add(option);
 }
 
