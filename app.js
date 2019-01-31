@@ -37,6 +37,7 @@ function buildTable(input)
 		{	
 			var td = document.createElement("TD"); //col 1	
 			
+			//pour sauter chaque collonne...
 			switch(col) 
 			{
 			  case 1:					
