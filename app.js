@@ -2,20 +2,81 @@
 
 function valider(form){
 	
-	var imput = request.getParameter("nombre");
+	var input = form.nombre.value;
+	if(input!= "")
+	{
+		if(input > 1 && input < 21 && input != ""){
+			buildTable(input);
+		}
+		else{			
+			alert("Veuillez entre un numero entre 2 et 20!");
+		}
+	}else{
+		alert("Champs vide!");
+	}	
 	
-	if(imput > 1 && imput < 21){
-		buildTable();
-	}
-	else{
-	alert("Mauvaise entree!");
+}//fin methode
+	
+function buildTable(input)
+{			
+	var tbody = document.createElement("TBODY");
+	var table   = document.createElement("TABLE");
+		table.setAttribute("border",1);
+		table.appendChild(tbody);
+		
+	for(var lig = 1; lig <= 12; lig++)
+	{
+		var resultat = input*lig;
+		var tr = document.createElement("TR");	//row 1
+		
+		for (var col = 1; col <= 5; col++)
+		{	
+			var td = document.createElement("TD"); //col 1	
+			
+			switch(col) 
+			{
+			  case 1:					
+					var td_text = document.createTextNode(input);
+					td.appendChild(td_text);
+					tr.appendChild(td);
+				break;
+			  case 2:
+					var td_text = document.createTextNode("x");
+					td.appendChild(td_text);
+					tr.appendChild(td);
+				break;
+			  case 3:
+					var td_text = document.createTextNode(lig);
+					td.appendChild(td_text);
+					tr.appendChild(td);
+				break;
+			  case 4:
+					var td_text = document.createTextNode("=");
+					td.appendChild(td_text);
+					tr.appendChild(td);
+				break;
+			  case 5:
+					var td_text = document.createTextNode(resultat);
+					td.appendChild(td_text);
+					tr.appendChild(td);
+				break;
+			}			
+		}
+		tbody.appendChild(tr);
 	}
 	
-}
+	//2) créer thead et tfoot 
+	
+	var thead   = document.createElement("THEAD"); 
+	
 
-function buildTable(){
-	
-}
+		
+	 //5) ajouter la table à l'élement «content»
+		document.getElementById("content").appendChild(table);
+}//fin methode
+
+
+
 
 // =========================  EXERCICE 3 ========================= -->
 
