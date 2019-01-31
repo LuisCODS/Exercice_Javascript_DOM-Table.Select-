@@ -21,6 +21,8 @@ function valider(form){
 	
 function buildTable(input)
 {			
+	//Permet de netoyer à chaque click pour une nouvelle table de multiplication.
+	document.getElementById('content').innerHTML = null;
 	var tbody = document.createElement("TBODY");
 	var table   = document.createElement("TABLE");
 		table.setAttribute("border",1);
