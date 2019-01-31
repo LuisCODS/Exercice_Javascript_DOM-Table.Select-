@@ -10,9 +10,11 @@ function valider(form){
 		}
 		else{			
 			alert("Veuillez entre un numero entre 2 et 20!");
+			form.nombre.focus();
 		}
 	}else{
 		alert("Champs vide!");
+		form.nombre.focus();
 	}	
 	
 }//fin methode
@@ -63,15 +65,10 @@ function buildTable(input)
 			}			
 		}
 		tbody.appendChild(tr);
-	}
-	
-	//2) créer thead et tfoot 
-	
-	var thead   = document.createElement("THEAD"); 
-	
-
+	}	
+	var thead   = document.createElement("THEAD");
 		
-	 //5) ajouter la table à l'élement «content»
+		//ajouter la table à l'élement «content»
 		document.getElementById("content").appendChild(table);
 }//fin methode
 
@@ -98,6 +95,7 @@ var modeles = document.getElementById("modele");
 for (var propre in automobiles){
     var option = document.createElement("option");
     option.textContent = propre;
+	//option.setAttribute("propre", propre)
     marques.add(option);
 }
 
